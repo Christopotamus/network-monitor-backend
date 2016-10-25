@@ -1,0 +1,28 @@
+{
+  "name": "node",
+  "plural": "nodes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "active": {
+      "type": "boolean",
+      "required": false
+    }
+
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

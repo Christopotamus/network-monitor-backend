@@ -1,0 +1,12 @@
+{
+  "mongo_dev": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "url": "",
+    "database": "network-monitor",
+    "password": "",
+    "name": "mongo_dev",
+    "user": "",
+    "connector": "mongodb"
+  }
+}
