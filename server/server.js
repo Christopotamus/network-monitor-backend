@@ -24,6 +24,25 @@ boot(app, __dirname, function(err) {
   if (err) throw err;
 
   // start the server if `$ node server.js`
-  if (require.main === module)
-    app.start();
+  if (require.main === module){
+    app.io = require('socket.io')(app.start());
+    app.polling = require('./start-polling.js');
+    app.polling.setup();
+    app.io.on('connection', function(socket){
+      console.log('a user connected');
+      //socket.on('node-up', function(msg,node){
+      //  console.log('message: ' + msg);
+      //  app.io.emit('chat message', msg);
+      //});
+      //socket.on('node-down', function(msg,node){
+      //  console.log('message: ' + msg);
+      //  app.io.emit('chat message', msg);
+      //});
+      socket.on('disconnect', function(){
+        console.log('user disconnected');
+      });
+    });
+    //begin monitoring
+   // app.start();
+  }
 });

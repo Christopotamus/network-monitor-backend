@@ -17,7 +17,9 @@
     "loopback-connector-mongodb": "^1.17.0",
     "loopback-datasource-juggler": "^2.39.0",
     "mongodb": "^2.2.11",
+    "ping": "^0.2.1",
     "serve-favicon": "^2.0.1",
+    "socket.io": "^1.5.1",
     "strong-error-handler": "^1.0.1"
   },
   "devDependencies": {
