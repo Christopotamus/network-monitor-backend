@@ -32,6 +32,12 @@ module.exports = {
     
       this.startPollingNode(node);
   }, 
+  removeNode(node){
+    console.log(node);
+    var nodeCopy = Object.assign(this.nodes, {});
+
+    this.nodes = nodeCopy.filter((n) => {return n.id.toString() != node.id.toString()});
+  },
   startPollingNode(n){
     //for each node, start a ping every 5 seconds, and if they're down update the model
     var cfg = {
@@ -41,8 +47,8 @@ module.exports = {
       this.Node.findById(n.id, (err,node) => {
         //console.log(node);
         ping.sys.probe(node.address, (isAlive) => {
-          node.updateAttribute("active", isAlive);
-          console.log("node %s is: %s", node.address,(isAlive) ? "Up" : "Down" );
+            node.updateAttribute("active", isAlive);
+            console.log("node %s is: %s", node.address,(isAlive) ? "Up" : "Down");
           //this.startPollingNode(node); 
         }, cfg);
       });
