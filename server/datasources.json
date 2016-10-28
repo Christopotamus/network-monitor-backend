@@ -1,6 +1,6 @@
 {
   "mongo_dev": {
-    "host": "127.0.0.1",
+    "host": "mongo",
     "port": 27017,
     "url": "",
     "database": "network-monitor",
